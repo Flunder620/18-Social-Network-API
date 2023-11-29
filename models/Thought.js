@@ -17,7 +17,8 @@ const thoughtSchema = new Schema(
     username: {
         type: String,
         required: true,
-    }
+    },
+    reactions: [reactionSchema]
   },
   {
     toJSON: {
@@ -32,6 +33,11 @@ thoughtSchema.virtual("formattedDate").get(function () {
   const formattedDate = dayjs(this.createdAt).format("MM/DD/YYYY");
   return formattedDate;
 });
+
+thoughtSchema.virtual('reactionCount').get(function() {
+  return this.reactions.length;
+});
+
 
 const Thought = model("thought", thoughtSchema);
 
