@@ -60,5 +60,6 @@ module.exports = {
             res.status(500).json(err)
         }
     }
+    //add and delete friend from user's friendlist
     
 }

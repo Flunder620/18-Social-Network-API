@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
-const { Thought } = require(".");
+// const { Thought } = require(".");npm start
+
 const dayjs = require("dayjs");
 
 const reactionSchema = new Schema({
