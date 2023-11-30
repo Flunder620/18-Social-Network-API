@@ -34,15 +34,31 @@ module.exports = {
         }
     },
     // Update a user
-    // async updateUser (req,res) {
-    //     try{
+    async updateUser (req,res) {
+        try{
+            const user = await User.findOneAndUpdate({ _id: req.params.userId})
 
-    //     }
-    // },
+            if (!user) {
+                return res.status(404).json({ message: "No user found with that id"})
+            }
+        } catch (err) {
+            res.status(500).json(err)
+        }
+    },
     // Deleting a user and their thoughts
     async deleteUser (req,res) {
         try{
             const user = await User.findOneAndDelete({ _id: req.parmas.userId})
+            
+            if (!user) {
+                return res.status(404).json({ message: "No user found with that id"})
+            }
+
+            await Thought.deleteMany({ _id: { $in: user.thoughts}})
+            res.json({ message: 'User and thoughts deleted.'})
+        } catch (err) {
+            res.status(500).json(err)
         }
     }
+    
 }
