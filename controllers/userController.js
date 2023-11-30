@@ -32,5 +32,17 @@ module.exports = {
         } catch (err){
             res.statis(500).json(err);
         }
+    },
+    // Update a user
+    // async updateUser (req,res) {
+    //     try{
+
+    //     }
+    // },
+    // Deleting a user and their thoughts
+    async deleteUser (req,res) {
+        try{
+            const user = await User.findOneAndDelete({ _id: req.parmas.userId})
+        }
     }
 }
