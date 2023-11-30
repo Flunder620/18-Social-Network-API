@@ -2,6 +2,15 @@ const { Schema, model } = require("mongoose");
 const { Thought } = require(".");
 const dayjs = require("dayjs");
 
+const reactionSchema = new Schema(
+  {
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      
+    }
+  }
+)
+
 const thoughtSchema = new Schema(
   {
     thoughtText: {
