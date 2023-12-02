@@ -8,8 +8,11 @@ This is a simple backend application that works similarly to a social media app 
 
 ## Mock-Up
 
-The following image shows the web application's appearance and functionality: 
-![This shows what home page will look like](./assets/images/)
+The following images shows the application's appearance and functionality: 
+
+![This shows what home page will look like](./assets/images/thoughts.png)Images taken using Postman
+![](./assets/images/users.png)
+
 
 ## Video  Link
 
