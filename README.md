@@ -11,7 +11,7 @@ This is a simple backend application that works similarly to a social media app 
 The following image shows the web application's appearance and functionality: 
 ![This shows what home page will look like](./assets/images/)
 
-## Deployment Link
+## Video  Link
 
 
 
