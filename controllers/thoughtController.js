@@ -13,7 +13,7 @@ module.exports = {
   //Get single thought
   async getSingleThought(req, res) {
     try {
-      const thought = await Thought.findOne({ _id: req.params.Thought });
+      const thought = await Thought.findOne({ _id: req.params.thoughtId });
 
       if (!thought) {
         res.status(404), json({ message: "No thought found with this id" });
@@ -81,12 +81,12 @@ module.exports = {
 
       if (!user) {
         return res.status(404).json({
-          message: "Thought updated but no user found with this id",
+          message: "Thought deleted but no user found with this id",
         });
       }
 
       res.json({
-        message: "Thought updated",
+        message: "Thought deleted",
       });
     } catch (err) {
       res.status(500).json(err);

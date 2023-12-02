@@ -20,7 +20,7 @@ module.exports = {
       if (!user) {
         return res
           .status(404)
-          .json({ message: "No user found with that id-singleuser" });
+          .json({ message: "No user found with that id" });
       }
       res.json(user);
     } catch (err) {
