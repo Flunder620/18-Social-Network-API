@@ -1,12 +1,11 @@
-const { Schema, model } = require("mongoose");
-// const { Thought } = require(".");npm start
+const { Schema, Types, model } = require("mongoose");
 
 const dayjs = require("dayjs");
 
 const reactionSchema = new Schema({
   reactionId: {
     type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(), //Why is Types not green//
+    default: () => new Types.ObjectId(),
   },
   reactionBody: {
     type: String,
@@ -49,13 +48,13 @@ const thoughtSchema = new Schema(
   }
 );
 
-//thought getter
 thoughtSchema.virtual("formattedDate").get(function () {
   //used dayjs to format date
   const formattedDate = dayjs(this.createdAt).format("MM/DD/YYYY");
   return formattedDate;
 });
 
+//thought getter
 thoughtSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });

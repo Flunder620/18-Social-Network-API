@@ -30,7 +30,7 @@ module.exports = {
             const user = await User.create(req.body);
             res.json(user);
         } catch (err){
-            res.statis(500).json(err);
+            res.status(500).json(err);
         }
     },
     // Update a user
